@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
+    
     }
     private void Shoot()
     {
@@ -73,5 +74,9 @@ public class Weapon : MonoBehaviour
         GameObject fx = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(fx, 0.2f);
 
+    }
+    private void AimDownSight()
+    {
+        GetComponent<WeaponZoom>().ToggleZoom();
     }
 }
