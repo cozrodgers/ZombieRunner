@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+
     [SerializeField] float damage = 30f;
+    [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     // Start is called before the first frame update
+    void Start(){
+        muzzleFlash = GetComponentInChildren<ParticleSystem>();
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -17,6 +23,18 @@ public class Weapon : MonoBehaviour
 
     }
     private void Shoot()
+    {
+        PlayMuzzleFlash();
+        ProcessRaycast();
+
+    }
+
+    private void PlayMuzzleFlash()
+    {
+        muzzleFlash.Play();
+    }
+
+    private void ProcessRaycast()
     {
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
@@ -36,6 +54,5 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
-
     }
 }
