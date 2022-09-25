@@ -62,7 +62,7 @@ public class Weapon : MonoBehaviour
     private void CreateHitImpact(RaycastHit hit)
     {
 
-        GameObject fx = Instantiate(hitEffect, hit.point, Quaternion.identity);
+        GameObject fx = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(fx, 0.2f);
         
     }
