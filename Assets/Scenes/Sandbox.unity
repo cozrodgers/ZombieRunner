@@ -1958,7 +1958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3402297547680394311, guid: 82dca7a6ff32d0b44bfed830ad153ab1, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3402297547680394328, guid: 82dca7a6ff32d0b44bfed830ad153ab1, type: 3}
       propertyPath: target
@@ -1966,7 +1966,7 @@ PrefabInstance:
       objectReference: {fileID: 178671526}
     - target: {fileID: 3402297547680394328, guid: 82dca7a6ff32d0b44bfed830ad153ab1, type: 3}
       propertyPath: chaseRange
-      value: 15.4
+      value: 11.4
       objectReference: {fileID: 0}
     - target: {fileID: 3402297547680394331, guid: 82dca7a6ff32d0b44bfed830ad153ab1, type: 3}
       propertyPath: m_RootOrder
