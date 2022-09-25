@@ -9,10 +9,13 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 30f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] AudioClip fireSFX;
+    [SerializeField] AudioClip emptySFX;
     AudioSource audioSource;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Camera fPCamera;
     [SerializeField] float range = 100f;
+    [SerializeField] Ammo ammo;
+
     public Camera FPCamera { get { return fPCamera; } }
     // Start is called before the first frame update
     void Start()
@@ -25,12 +28,22 @@ public class Weapon : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (ammo.AmmoAmount > 0)
+            {
+
+                Shoot();
+            }
+            else
+            {
+                audioSource.PlayOneShot(emptySFX);
+            }
         }
 
     }
     private void Shoot()
     {
+
+        ammo.RecuceCurrentAmmo();
         PlayMuzzleFlash();
         PlayFireSFX();
         ProcessRaycast();
