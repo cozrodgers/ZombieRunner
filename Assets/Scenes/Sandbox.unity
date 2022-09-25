@@ -789,6 +789,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 390894116}
+--- !u!114 &183644391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178377602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137548f00c179d54d8b2954f781b8ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomInSensitivity: 0.5
+  zoomOutSensitivity: 2
 --- !u!4 &243622401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3285041184355024387, guid: 71380e38579d41c4db2d02fd7a8bb5b7, type: 3}

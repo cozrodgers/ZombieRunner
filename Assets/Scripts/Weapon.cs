@@ -11,13 +11,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] AudioClip fireSFX;
     AudioSource audioSource;
     [SerializeField] GameObject hitEffect;
-    [SerializeField] Camera FPCamera;
+    [SerializeField] Camera fPCamera;
     [SerializeField] float range = 100f;
-
+    public Camera FPCamera { get { return fPCamera; } }
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponentInParent<AudioSource>();
+        fPCamera = Camera.main;
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
     }
     void Update()
@@ -26,7 +27,7 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
-    
+
     }
     private void Shoot()
     {
@@ -48,7 +49,7 @@ public class Weapon : MonoBehaviour
     private void ProcessRaycast()
     {
         RaycastHit hit;
-        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
+        if (Physics.Raycast(fPCamera.transform.position, fPCamera.transform.forward, out hit, range))
         {
             CreateHitImpact(hit);
 
