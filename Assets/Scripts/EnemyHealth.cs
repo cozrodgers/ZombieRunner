@@ -5,34 +5,15 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
-    // Start is called before the first frame update
-    void Start()
+    public void TakeDamage(float dmg)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        hitPoints -= dmg;
         if (hitPoints <= 0)
         {
             Destroy(gameObject);
+
         }
 
-    }
-    public void TakeDamage(float dmg)
-    {
-        if (hitPoints > 0)
-        {
-            hitPoints -= dmg;
-            Debug.Log(hitPoints);
-        }
-        else
-        {
-            //DIE
-
-            return;
-        }
     }
 
 }

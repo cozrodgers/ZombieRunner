@@ -8,12 +8,16 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] float damage = 30f;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] AudioClip fireSFX;
+    AudioSource audioSource;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponentInParent<AudioSource>();
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
     }
     void Update()
@@ -22,11 +26,11 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
         }
-
     }
     private void Shoot()
     {
         PlayMuzzleFlash();
+        PlayFireSFX();
         ProcessRaycast();
 
     }
@@ -34,6 +38,10 @@ public class Weapon : MonoBehaviour
     private void PlayMuzzleFlash()
     {
         muzzleFlash.Play();
+    }
+    private void PlayFireSFX()
+    {
+        audioSource.PlayOneShot(fireSFX);
     }
 
     private void ProcessRaycast()
@@ -64,6 +72,6 @@ public class Weapon : MonoBehaviour
 
         GameObject fx = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(fx, 0.2f);
-        
+
     }
 }

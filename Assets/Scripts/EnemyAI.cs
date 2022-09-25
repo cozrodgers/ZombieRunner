@@ -12,6 +12,8 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     Animator anim;
     float distanceToTarget = Mathf.Infinity;
+    private float turnSpeed = 5f;
+
     // Start is called before the first frame update
     void OnDrawGizmosSelected()
     {
@@ -36,10 +38,11 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToTarget < chaseRange)
         {
             isProvoked = true;
-        } 
+        }
     }
     void EngageTarget()
     {
+        FaceTarget();
         if (distanceToTarget >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
@@ -47,14 +50,14 @@ public class EnemyAI : MonoBehaviour
         if (distanceToTarget <= navMeshAgent.stoppingDistance)
         {
             AttackTarget();
-        } else {
-            anim.SetBool("Attack", false);
         }
 
     }
 
     private void ChaseTarget()
     {
+
+        anim.SetBool("Attack", false);
         anim.SetTrigger("Move");
         navMeshAgent.SetDestination(target.position);
     }
@@ -62,5 +65,13 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("Attack", true);
         Debug.Log("Attacking " + target.gameObject.name);
+    }
+    private void FaceTarget()
+    {
+        // transform.rotation  = where teh target is, we need to rotate at a certain speed;
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+
     }
 }
