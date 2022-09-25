@@ -228,7 +228,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888698766424537575}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83c81407209f85e4c87c0cda8b32868e, type: 3}
   m_Name: 
@@ -427,6 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   muzzleFlash: {fileID: 0}
+  hitEffect: {fileID: 4671409729673485461, guid: 2b3ea800e16eaea43b096f1448910afa, type: 3}
   FPCamera: {fileID: 1888698766424079299}
   range: 100
 --- !u!4 &1881692426482392077 stripped
