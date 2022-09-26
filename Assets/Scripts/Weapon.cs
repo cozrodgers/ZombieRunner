@@ -16,15 +16,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera fPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] Ammo ammo;
-	[SerializeField] float fireResetTime = 1f;
-	[SerializeField] bool canFireWeapon = true;
-    Animator anim; 
+    [SerializeField] float fireResetTime = 1f;
+    [SerializeField] bool canFireWeapon = true;
+    Animator anim;
 
     public Camera FPCamera { get { return fPCamera; } }
     // Start is called before the first frame update
     void Start()
     {
-		anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         audioSource = GetComponentInParent<AudioSource>();
         fPCamera = Camera.main;
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour
             if (ammo.AmmoAmount > 0)
             {
 
-                Shoot();
+                StartCoroutine(Shoot());
             }
             else
             {
@@ -46,33 +46,30 @@ public class Weapon : MonoBehaviour
 
     }
 
-    private void Shoot()
+    private IEnumerator Shoot()
     {
-		//Check if animation state is idle
-		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
 
-		if(canFireWeapon) {
-	    PlayRecoilAnimation();
-        ammo.RecuceCurrentAmmo();
-        PlayMuzzleFlash();
-        PlayFireSFX();
-        ProcessRaycast();
-		canFireWeapon = false;
-		StartCoroutine(FireWeapon());
-		} else {
-			Debug.Log("FUCK CANT SHOOT YET BOI");
-		}
-		}
+        //Check if animation state is idle
+        if (canFireWeapon)
+        {
+            PlayRecoilAnimation();
+            ammo.ReduceCurrentAmmo();
+            PlayMuzzleFlash();
+            PlayFireSFX();
+            ProcessRaycast();
+            canFireWeapon = false;
+
+            yield return new WaitForSeconds(fireResetTime / 2);
+            if (rakeSFX != null)
+            {
+                audioSource.PlayOneShot(rakeSFX);
+            }
+            yield return new WaitForSeconds(fireResetTime / 2);
+            canFireWeapon = true;
+        }
 
     }
 
-	private IEnumerator FireWeapon() {
-		yield return new WaitForSeconds(fireResetTime);
-		if(rakeSFX != null) {
-		audioSource.PlayOneShot(rakeSFX);
-		}
-		 canFireWeapon = true;
-	}
 
     private void PlayMuzzleFlash()
     {
@@ -82,12 +79,14 @@ public class Weapon : MonoBehaviour
     {
         audioSource.PlayOneShot(fireSFX);
     }
-	private void PlayRecoilAnimation() {
-	    if(anim != null) {
-        anim.SetTrigger("Recoil");
-	    }
+    private void PlayRecoilAnimation()
+    {
+        if (anim != null)
+        {
+            anim.SetTrigger("Recoil");
+        }
 
-	}
+    }
 
     private void ProcessRaycast()
     {

@@ -6,7 +6,7 @@ public class Ammo : MonoBehaviour
 {
     [SerializeField] int ammoAmount = 10;
     public int AmmoAmount { get { return ammoAmount; } }
-    public void RecuceCurrentAmmo()
+    public void ReduceCurrentAmmo()
     {
         ammoAmount--;
     }
