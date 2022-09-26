@@ -10,11 +10,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] AudioClip fireSFX;
     [SerializeField] AudioClip emptySFX;
+    [SerializeField] AudioClip rakeSFX;
     AudioSource audioSource;
     [SerializeField] GameObject hitEffect;
     [SerializeField] Camera fPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] Ammo ammo;
+	[SerializeField] float fireResetTime = 1f;
+	[SerializeField] bool canFireWeapon = true;
 
     public Camera FPCamera { get { return fPCamera; } }
     // Start is called before the first frame update
@@ -40,15 +43,27 @@ public class Weapon : MonoBehaviour
         }
 
     }
+
     private void Shoot()
     {
-
+		if(canFireWeapon) {
         ammo.RecuceCurrentAmmo();
         PlayMuzzleFlash();
         PlayFireSFX();
         ProcessRaycast();
-
+		canFireWeapon = false;
+		StartCoroutine(FireWeapon());
+		}
     }
+
+	private IEnumerator FireWeapon() {
+		yield return new WaitForSeconds(fireResetTime);
+		if(rakeSFX != null) {
+
+		audioSource.PlayOneShot(rakeSFX);
+		}
+		 canFireWeapon = true;
+	}
 
     private void PlayMuzzleFlash()
     {
