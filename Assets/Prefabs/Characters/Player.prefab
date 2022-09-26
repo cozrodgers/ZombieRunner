@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ffc83b26b36084da123d0e20f5152f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 10
+  ammoAmount: 69
 --- !u!114 &183644389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,11 +704,34 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2009759145401697632}
     - target: {fileID: 2182208776114805451, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182208776114805451, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
       propertyPath: fPCamera
       value: 
       objectReference: {fileID: 1888698766424079299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
+--- !u!1 &8235685149901734201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 638182254783222165, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
+  m_PrefabInstance: {fileID: 8831646157094883500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4406303600366450792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235685149901734201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137548f00c179d54d8b2954f781b8ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomInSensitivity: 2
+  zoomOutSensitivity: 0.5
 --- !u!4 &8719207124643224451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 256872088655072047, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
