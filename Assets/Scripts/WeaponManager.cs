@@ -2,66 +2,101 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class WeaponManager : MonoBehaviour
 {
-    [SerializeField] Dictionary<int, GameObject> availableWeapons = new Dictionary<int, GameObject>();
-    GameObject currentWeapon;
-    public Dictionary<int, GameObject> AvailableWeapons
-    {
-        get { return availableWeapons; }
-    }
+    [SerializeField] int currentWeapon = 0;
 
     void Start()
     {
-
-        Weapon[] weapons = GetComponentsInChildren<Weapon>();
-
-        int weaponIndex = 0;
-        foreach (Weapon weapon in weapons)
-        {
-            Transform _weapon = weapon.GetComponent<Transform>();
-            _weapon.gameObject.SetActive(false);
-            availableWeapons.Add(weaponIndex, _weapon.gameObject);
-            Debug.Log(availableWeapons);
-            weaponIndex++;
-        }
-     
-
-        //Set first weapon to active
-        Debug.Log(availableWeapons[1]);
-        SetActiveWeapon(availableWeapons[1]);
+        SetWeaponActive();
 
     }
-
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        int prevWeapon = currentWeapon;
+        ProcessKeyInput();
+        ProcessScrollWheel();
+
+        if (prevWeapon != currentWeapon)
         {
-            SetActiveWeapon(availableWeapons[0]);
+            SetWeaponActive();
 
         }
-        if (Input.GetKey(KeyCode.Alpha2))
-        {
-            SetActiveWeapon(availableWeapons[1]);
 
-        }
-        if (Input.GetKey(KeyCode.Alpha3))
-        {
-            SetActiveWeapon(availableWeapons[2]);
-
-        }
     }
-    public void SetActiveWeapon(GameObject weapon)
+
+    private void ProcessScrollWheel()
     {
-        
-        if (currentWeapon != null)
+        //access the scrollwheel axis
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            currentWeapon.gameObject.SetActive(false);
+            // if the index gets to end of available weapons, reset the index
+            if (currentWeapon >= transform.childCount - 1)
+            {
+                currentWeapon = 0;
+            }
+            else
+            {
+                currentWeapon++;
+            }
         }
-        currentWeapon = weapon;
-        currentWeapon.gameObject.SetActive(true);
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (currentWeapon <= 0)
+            {
+                currentWeapon = transform.childCount - 1;
+            }
+            else
+            {
+                currentWeapon--;
+            }
+
+        }
+
     }
+
+    private void ProcessKeyInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentWeapon = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeapon = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentWeapon = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            currentWeapon = 3;
+        }
+    }
+
+    void SetWeaponActive()
+    {
+        int weaponIndex = 0;
+        foreach (Transform weapon in transform)
+        {
+            if (currentWeapon == weaponIndex)
+            {
+                weapon.gameObject.SetActive(true);
+
+            }
+            else
+            {
+                weapon.gameObject.SetActive(false);
+            }
+
+            weaponIndex++;
+        }
+
+    }
+
 
 }
 

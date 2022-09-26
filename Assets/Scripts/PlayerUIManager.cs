@@ -16,12 +16,12 @@ public class PlayerUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateAmmo();
+        // UpdateAmmo();
 
     }
-    void UpdateAmmo()
-    {
-        ammoText.text = $"Ammo:{ammo.AmmoAmount}";
+    // void UpdateAmmo()
+    // {
+    //     ammoText.text = $"Ammo:{ammo.AmmoAmount}";
 
-    }
+    // }
 }

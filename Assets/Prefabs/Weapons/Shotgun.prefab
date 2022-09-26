@@ -111,6 +111,7 @@ MonoBehaviour:
   ammo: {fileID: 0}
   fireResetTime: 2
   canFireWeapon: 1
+  ammoType: 1
 --- !u!95 &2809851832870571313
 Animator:
   serializedVersion: 4

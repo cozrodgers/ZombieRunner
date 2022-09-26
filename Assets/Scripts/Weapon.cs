@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Ammo ammo;
     [SerializeField] float fireResetTime = 1f;
     [SerializeField] bool canFireWeapon = true;
+    [SerializeField] AmmoType ammoType;
     Animator anim;
 
     public Camera FPCamera { get { return fPCamera; } }
@@ -29,11 +30,14 @@ public class Weapon : MonoBehaviour
         fPCamera = Camera.main;
         muzzleFlash = GetComponentInChildren<ParticleSystem>();
     }
+    void OnEnable() {
+        canFireWeapon = true;
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (ammo.AmmoAmount > 0)
+            if (ammo.GetCurrentAmmo(ammoType) > 0)
             {
 
                 StartCoroutine(Shoot());
@@ -53,12 +57,11 @@ public class Weapon : MonoBehaviour
         if (canFireWeapon)
         {
             PlayRecoilAnimation();
-            ammo.ReduceCurrentAmmo();
+            ammo.ReduceCurrentAmmo(ammoType);
             PlayMuzzleFlash();
             PlayFireSFX();
             ProcessRaycast();
             canFireWeapon = false;
-
             yield return new WaitForSeconds(fireResetTime / 2);
             if (rakeSFX != null)
             {
@@ -67,6 +70,7 @@ public class Weapon : MonoBehaviour
             yield return new WaitForSeconds(fireResetTime / 2);
             canFireWeapon = true;
         }
+
 
     }
 
@@ -103,12 +107,9 @@ public class Weapon : MonoBehaviour
 
                 target.TakeDamage(damage);
             }
-            // decrease enemy health
+
         }
-        else
-        {
-            return;
-        }
+
     }
 
     private void CreateHitImpact(RaycastHit hit)
