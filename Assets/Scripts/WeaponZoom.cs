@@ -8,18 +8,23 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] RigidbodyFirstPersonController firstPersonController;
 
-    float defaultFieldOfView;
+    public float defaultFieldOfView;
     [SerializeField] float zoomedOutFOV = 60f;
-    [SerializeField]float zoomedInFOV = 20f;
+    [SerializeField] float zoomedInFOV = 20f;
     float ADSSpeed = 50f;
     bool isZoomed = false;
     [SerializeField] float zoomInSensitivity = 2f;
     [SerializeField] float zoomOutSensitivity = .5f;
 
-    void Start()
+    void Awake()
     {
         defaultFieldOfView = cam.fieldOfView;
     }
+    void OnDisable()
+    {
+        cam.fieldOfView = defaultFieldOfView;
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire2"))

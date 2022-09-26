@@ -8,6 +8,7 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] int currentWeapon = 0;
 
+
     void Start()
     {
         SetWeaponActive();
@@ -21,6 +22,7 @@ public class WeaponManager : MonoBehaviour
 
         if (prevWeapon != currentWeapon)
         {
+            
             SetWeaponActive();
 
         }
@@ -84,6 +86,7 @@ public class WeaponManager : MonoBehaviour
         {
             if (currentWeapon == weaponIndex)
             {
+    
                 weapon.gameObject.SetActive(true);
 
             }
