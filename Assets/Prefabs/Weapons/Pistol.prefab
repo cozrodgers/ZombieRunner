@@ -110,6 +110,7 @@ MonoBehaviour:
   ammo: {fileID: 0}
   fireResetTime: 0.1
   canFireWeapon: 1
+  ammoType: 0
 --- !u!1 &2587953486136137802
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 256872088655072047}
   - component: {fileID: 3764811758555923594}
   - component: {fileID: 1430942988592246848}
+  - component: {fileID: 4754425351818610012}
   - component: {fileID: 2182208776114805451}
-  - component: {fileID: 2809851832870571313}
+  - component: {fileID: 4406303600366450792}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -88,6 +89,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4754425351818610012
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638182254783222165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3b5f628d40374440806cad719ccf518, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2182208776114805451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdf14d69b7a6d34da36ddcdef67e29e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 100
   muzzleFlash: {fileID: 8920055925070638976}
   fireSFX: {fileID: 8300000, guid: 8d6e7061cf1eb274e90f0ae132668092, type: 3}
   emptySFX: {fileID: 8300000, guid: 2c17c0eaf32e44b859cb57a163cbcced, type: 3}
@@ -112,26 +133,24 @@ MonoBehaviour:
   fireResetTime: 2
   canFireWeapon: 1
   ammoType: 1
---- !u!95 &2809851832870571313
-Animator:
-  serializedVersion: 4
+--- !u!114 &4406303600366450792
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638182254783222165}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9fe8dfe2560941e684cf771e5a8095c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137548f00c179d54d8b2954f781b8ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  firstPersonController: {fileID: 0}
+  zoomedOutFOV: 60
+  zoomedInFOV: 55
+  zoomInSensitivity: 2
+  zoomOutSensitivity: 0.5
 --- !u!1 &1858115605981665730
 GameObject:
   m_ObjectHideFlags: 0

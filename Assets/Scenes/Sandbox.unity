@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009180678, g: 0.008546957, b: 0.009009263, a: 1}
+  m_IndirectSpecularColor: {r: 0.009180679, g: 0.008546958, b: 0.009009268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -780,29 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &207099322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8235685149901734201, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
-  m_PrefabInstance: {fileID: 1888698766598482535}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &207099327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207099322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137548f00c179d54d8b2954f781b8ec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 1348678013}
-  firstPersonController: {fileID: 183644394}
-  zoomedOutFOV: 60
-  zoomedInFOV: 50
-  zoomInSensitivity: 2
-  zoomOutSensitivity: 0.5
 --- !u!4 &243622401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3285041184355024387, guid: 71380e38579d41c4db2d02fd7a8bb5b7, type: 3}
@@ -2641,7 +2618,7 @@ MonoBehaviour:
   cam: {fileID: 1348678013}
   firstPersonController: {fileID: 183644394}
   zoomedOutFOV: 60
-  zoomedInFOV: 12
+  zoomedInFOV: 35
   zoomInSensitivity: 2
   zoomOutSensitivity: 0.5
 --- !u!4 &1153120747 stripped
@@ -3046,29 +3023,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 684026636886030488, guid: 2092a05886fd49b4a917ab0aef910e78, type: 3}
   m_PrefabInstance: {fileID: 1470126991}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1434531959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1249412335638333111, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
-  m_PrefabInstance: {fileID: 1888698766598482535}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1434531964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434531959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137548f00c179d54d8b2954f781b8ec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 1348678013}
-  firstPersonController: {fileID: 183644394}
-  zoomedOutFOV: 60
-  zoomedInFOV: 20
-  zoomInSensitivity: 2
-  zoomOutSensitivity: 0.5
 --- !u!4 &1435745256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 44884af1ac1d64d42902da40268ba120, type: 3}
@@ -5116,6 +5070,14 @@ PrefabInstance:
       propertyPath: ammo
       value: 
       objectReference: {fileID: 183644393}
+    - target: {fileID: 559934914362412521, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888698766424079299, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: field of view
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1888698766424537573, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5164,6 +5126,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2009759145401697632, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoSlots.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009759145401697632, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009759145401697632, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009759145401697632, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammoAmount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009759145401697632, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoSlots.Array.data[1].ammoAmount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009759145401697632, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: ammoSlots.Array.data[2].ammoAmount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167346914932844740, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1348678013}
+    - target: {fileID: 5167346914932844740, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: firstPersonController
+      value: 
+      objectReference: {fileID: 183644394}
+    - target: {fileID: 7932824596959708631, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1348678013}
+    - target: {fileID: 7932824596959708631, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
+      propertyPath: firstPersonController
+      value: 
+      objectReference: {fileID: 183644394}
     m_RemovedComponents:
     - {fileID: 183644391, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
     - {fileID: 4406303600366450792, guid: 0b0b25a46fc22c74c83fdaf99a937a4b, type: 3}
