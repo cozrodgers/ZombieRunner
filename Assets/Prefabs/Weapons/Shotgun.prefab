@@ -102,7 +102,7 @@ MonoBehaviour:
   damage: 30
   muzzleFlash: {fileID: 8920055925070638976}
   fireSFX: {fileID: 8300000, guid: 8d6e7061cf1eb274e90f0ae132668092, type: 3}
-  emptySFX: {fileID: 8300000, guid: 08cbb6f77a9c8a44996053adac857ea0, type: 3}
+  emptySFX: {fileID: 8300000, guid: 62769c274aa87014cb1270d95d9cdd2d, type: 3}
   hitEffect: {fileID: 4671409729673485461, guid: 2b3ea800e16eaea43b096f1448910afa, type: 3}
   fPCamera: {fileID: 0}
   range: 100
@@ -202,7 +202,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4224546025600953858, guid: 45038afe6279d1442a147ba3cfaf8f63, type: 3}
 --- !u!1 &2829818895781981513
@@ -300,7 +300,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7078116480488568873, guid: 45038afe6279d1442a147ba3cfaf8f63, type: 3}
 --- !u!1001 &8751910710870576944

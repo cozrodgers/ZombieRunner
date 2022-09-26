@@ -634,10 +634,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2009759145401697632}
     - target: {fileID: 2182208776114805451, guid: 6f69b97b1bf11cb4590dbe6579156a0f, type: 3}
-      propertyPath: fireSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 29f34b4853f4ddd4884185ec36434df3, type: 3}
-    - target: {fileID: 2182208776114805451, guid: 6f69b97b1bf11cb4590dbe6579156a0f, type: 3}
       propertyPath: fPCamera
       value: 
       objectReference: {fileID: 1888698766424079299}
@@ -703,10 +699,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shotgun
       objectReference: {fileID: 0}
-    - target: {fileID: 638182254783222165, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2182208776114805451, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
       propertyPath: ammo
       value: 
@@ -715,14 +707,6 @@ PrefabInstance:
       propertyPath: fPCamera
       value: 
       objectReference: {fileID: 1888698766424079299}
-    - target: {fileID: 4795064133270147068, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5016639460326377349, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388a965ead6208b4196888a2f501c25b, type: 3}
 --- !u!4 &8719207124643224451 stripped
