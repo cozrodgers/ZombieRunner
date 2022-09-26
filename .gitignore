@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 # Force include scene hierarchy
 !/[Ll]ibrary/LastSceneManagerSetup.txt
+
+#Don't include SFX Folders for Gun Sounds
+Assets/AssetPacks/GunSounds 
