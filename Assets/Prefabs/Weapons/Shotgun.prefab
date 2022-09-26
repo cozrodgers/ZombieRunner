@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3764811758555923594}
   - component: {fileID: 1430942988592246848}
   - component: {fileID: 2182208776114805451}
+  - component: {fileID: 2809851832870571313}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -103,10 +104,33 @@ MonoBehaviour:
   muzzleFlash: {fileID: 8920055925070638976}
   fireSFX: {fileID: 8300000, guid: 8d6e7061cf1eb274e90f0ae132668092, type: 3}
   emptySFX: {fileID: 8300000, guid: 2c17c0eaf32e44b859cb57a163cbcced, type: 3}
+  rakeSFX: {fileID: 0}
   hitEffect: {fileID: 4671409729673485461, guid: 2b3ea800e16eaea43b096f1448910afa, type: 3}
   fPCamera: {fileID: 0}
   range: 100
   ammo: {fileID: 0}
+  fireResetTime: 1
+  canFireWeapon: 1
+--- !u!95 &2809851832870571313
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638182254783222165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9fe8dfe2560941e684cf771e5a8095c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1858115605981665730
 GameObject:
   m_ObjectHideFlags: 0
