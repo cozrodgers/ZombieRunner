@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField][Range(1f, 30f)] float chaseRange = 15f;
     NavMeshAgent navMeshAgent;
+    EnemyHealth enemyHealth;
     Animator anim;
     float distanceToTarget = Mathf.Infinity;
     private float turnSpeed = 5f;
@@ -25,11 +26,12 @@ public class EnemyAI : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     void Update()
     {
-        if (GetComponent<EnemyHealth>().IsDead)
+        if (enemyHealth.IsDead)
         {
             StopFollowing();
         };
