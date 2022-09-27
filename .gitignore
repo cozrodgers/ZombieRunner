@@ -63,3 +63,4 @@ crashlytics-build.properties
 
 #Don't include SFX Folders for Gun Sounds
 Assets/AssetPacks/GunSFX
+Assets/AssetPacks/Zombie*

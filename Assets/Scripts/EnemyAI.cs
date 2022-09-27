@@ -29,8 +29,13 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (GetComponent<EnemyHealth>().IsDead)
+        {
+            StopFollowing();
+        };
         //Calc distance to the player
         distanceToTarget = Vector3.Distance(target.position, transform.position);
+
         if (isProvoked)
         {
             EngageTarget();
@@ -40,6 +45,15 @@ public class EnemyAI : MonoBehaviour
             isProvoked = true;
         }
     }
+
+    private void StopFollowing()
+    {
+        navMeshAgent.isStopped = true;
+        GetComponent<CapsuleCollider>().enabled = false;
+
+    }
+    
+
     public void OnDamageTaken()
     {
         isProvoked = true;
