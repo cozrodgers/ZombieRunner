@@ -20,9 +20,10 @@ public class EnemyAttack : MonoBehaviour
             return;
         }
         target.TakeDamage(dmg);
-        Debug.Log($"Hit you for {dmg}");
+        target.GetComponent<DisplayDamage>().ShowDamageSplatter();
     }
-    void OnDamageTaken(){
+    void OnDamageTaken()
+    {
         Debug.Log("success");
     }
 }
