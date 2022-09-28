@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     bool isProvoked;
-    [SerializeField] Transform target;
+    Transform target;
     [SerializeField][Range(1f, 30f)] float chaseRange = 15f;
     NavMeshAgent navMeshAgent;
     EnemyHealth enemyHealth;
@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Start()
     {
+        target = FindObjectOfType<PlayerHealth>().transform;
         anim = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         enemyHealth = GetComponent<EnemyHealth>();

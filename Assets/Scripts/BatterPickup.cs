@@ -7,7 +7,6 @@ public class BatterPickup : MonoBehaviour
     [SerializeField] float chargeAmount = 10f;
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pickup");
         if (other.gameObject.tag == "Player")
         {
             if (gameObject)
@@ -16,7 +15,7 @@ public class BatterPickup : MonoBehaviour
 
             }
 
-            FindObjectOfType<FlashlightSystem>().IncreaseBattery(chargeAmount);
+            other.GetComponentInChildren<FlashlightSystem>().IncreaseBattery(chargeAmount);
 
         }
     }
