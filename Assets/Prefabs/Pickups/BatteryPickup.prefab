@@ -4798,7 +4798,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2816
+  m_VersionIndex: 2819
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4897,6 +4897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeAmount: 10
+  audioSource: {fileID: 0}
+  chargeSFX: {fileID: 8300000, guid: 04411c34fe997524898b4284b79caad8, type: 3}
 --- !u!135 &8982280849353883894
 SphereCollider:
   m_ObjectHideFlags: 0
